@@ -1,0 +1,39 @@
+//ТОЧКМ ПЕРЕЛОМА
+// большие рабочие столы, 1400 пикселей и выше
+$desktop-size: 1400px;
+// большие рабочие столы, 1200 пикселей и выше
+$laptop-size: 1200px;
+// настольные компьютеры, 992 пикселей и выше
+$tablet-size: 992px;
+// Средние устройства (планшеты, 768 пикселей и выше)
+$medium-size: 768px;
+// телефоны с альбомной ориентацией, 576 пикселей и выше
+$mobile-size: 576px;
+
+
+// BASICS ПЕРЕМЕННЫЕ STYLE
+
+$color-primary: #4DB8A8; // бирюзовый (кнопка, подчеркивание)
+$color-primary-dark: #3A9688; // hover состояния
+$color-primary-light: #E0F4F1; // светлый фон секций
+
+$color-text-dark: #1A202C; // основной текст
+$color-text-light: #718096; // серый текст (подзаголовки)
+$color-white: #FFFFFF;
+
+$primary-bg-color: #F8F9FA; // фон страницы
+
+// TYPOGRAPHY
+$font-family-base: 'Epilogue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+// SPACING
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 48px;
+$spacing-xl: 64px;
+
+// TRANSITIONS
+$transition-base: all 0.3s ease;

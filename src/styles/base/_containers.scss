@@ -1,0 +1,29 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.container{
+  width: 100%;
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+}
+.container-right{
+  /* overflow-x: hidden */
+  padding-left: calc(
+    (100% - var(--container-width)) / 2 + var(--container-padding)
+  );
+
+  @include laptop-block {
+    padding-right: var(--container-padding);
+  }
+}
+.container-left{
+  /* overflow-x: hidden */
+  padding-right: calc(
+      (100% - var(--container-width)) / 2 + var(--container-padding)
+  );
+
+  @include laptop-block {
+    padding-left: var(--container-padding);
+  }
+}

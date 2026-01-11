@@ -1,0 +1,16 @@
+@use "variables" as *;
+
+/* base style globs */
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: 400;
+  line-height: $line-height-base;
+  color: $color-text-dark;
+  background-color: $primary-bg-color;
+  min-height: 100vh;
+  overflow-x: hidden;
+}

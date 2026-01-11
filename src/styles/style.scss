@@ -1,0 +1,13 @@
+// base, всегда первым
+@use "base/variables" as *; // as * чтобы не писать variables.$desktop-size
+@use "base/mixins" as *;
+@use "base/reset";
+@use "base/base";
+@use "base/containers";
+
+:root{
+  --container-width: 1180px;
+  --container-padding: 15px;
+}
+
+// components
