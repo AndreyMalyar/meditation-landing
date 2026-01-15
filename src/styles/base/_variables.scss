@@ -13,18 +13,34 @@ $mobile-size: 576px;
 
 // BASICS ПЕРЕМЕННЫЕ STYLE
 
-$color-primary: #4DB8A8; // бирюзовый (кнопка, подчеркивание)
-$color-primary-dark: #3A9688; // hover состояния
-$color-primary-light: #E0F4F1; // светлый фон секций
+// Primary colors
+$color-primary: #3BD1BB;        // main colour (светло-бирюзовый)
+$color-primary-dark: #1A7F72;   // main colour (темно-бирюзовый)
+$color-primary-light: #4DD9C4;  // 1A7F72 (30%) - для светлых фонов
 
-$color-text-dark: #1A202C; // основной текст
-$color-text-light: #718096; // серый текст (подзаголовки)
+// Text colors
+$color-text-title: #000000;           // tittle (заголовки)
+$color-text-subtitle: rgba(0, 0, 0, 0.8);  // sub tittle (80%)
+$color-text-body: rgba(0, 0, 0, 0.5);      // body text (50%)
 $color-white: #FFFFFF;
 
-$primary-bg-color: #F8F9FA; // фон страницы
+// Background
+$primary-bg-color: #baefe7;     // фон страницы
 
-// TYPOGRAPHY
-$font-family-base: 'Epilogue', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+// Gradients
+$gradient-button-start: #259385;
+$gradient-button-end: #159685;
+
+$gradient-bg-start: #B1AEB4;
+$gradient-bg-end: #B1AEB4;
+
+$gradient-name-start: #1A7F72;
+$gradient-name-end: #1A7F72;
+
+// Шрифты из Figma
+$font-family-base: 'Heebo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;      // Основной текст
+$font-family-heading: 'Merienda', 'Georgia', serif;  // Заголовки (декоративный)
+
 $font-size-base: 16px;
 $line-height-base: 1.6;
 

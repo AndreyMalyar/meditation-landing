@@ -1,83 +1,83 @@
-@use "variables" as *;
+@use 'variables' as *;
 
-@mixin flex($jc: center, $ai: center){
+@mixin flex($jc: center, $ai: center) {
   display: flex;
   justify-content: $jc;
   align-items: $ai;
 }
-@mixin inline-flex($jc: center, $ai: center){
+@mixin inline-flex($jc: center, $ai: center) {
   display: inline-flex;
   justify-content: $jc;
   align-items: $ai;
 }
-@mixin bg($url: '', $repeat: no-repeat, $x: center, $y: center, $size: cover){
-  background-image: url('#{$url}');
+@mixin bg($url, $repeat: no-repeat, $x: center, $y: center, $size: cover) {
+  background-image: url($url);
   background-repeat: $repeat;
   background-position: $x $y;
   background-size: $size;
 }
-@mixin bgProps($repeat: no-repeat, $x: center, $y: center, $size: cover){
+@mixin bgProps($repeat: no-repeat, $x: center, $y: center, $size: cover) {
   background-repeat: $repeat;
   background-position: $x $y;
   background-size: $size;
 }
-@mixin desktop($name, $value){
-  @media (max-width: $desktop-size){
+@mixin desktop($name, $value) {
+  @media (max-width: $desktop-size) {
     #{$name}: $value;
   }
 }
-@mixin laptop($name, $value){
-  @media (max-width: $laptop-size){
+@mixin laptop($name, $value) {
+  @media (max-width: $laptop-size) {
     #{$name}: $value;
   }
 }
-@mixin tablet($name, $value){
-  @media (max-width: $tablet-size){
+@mixin tablet($name, $value) {
+  @media (max-width: $tablet-size) {
     #{$name}: $value;
   }
 }
-@mixin mobile($name, $value){
-  @media (max-width: $medium-size){
+@mixin mobile($name, $value) {
+  @media (max-width: $medium-size) {
     #{$name}: $value;
   }
 }
-@mixin mobile-small($name, $value){
-  @media (max-width: $mobile-size){
+@mixin mobile-small($name, $value) {
+  @media (max-width: $mobile-size) {
     #{$name}: $value;
   }
 }
-@mixin desktop-block{
-  @media (max-width: $desktop-size){
+@mixin desktop-block {
+  @media (max-width: $desktop-size) {
     @content;
   }
 }
-@mixin laptop-block{
-  @media (max-width: $laptop-size){
+@mixin laptop-block {
+  @media (max-width: $laptop-size) {
     @content;
   }
 }
-@mixin tablet-block{
-  @media (max-width: $tablet-size){
+@mixin tablet-block {
+  @media (max-width: $tablet-size) {
     @content;
   }
 }
-@mixin mobile-block{
-  @media (max-width: $medium-size){
+@mixin mobile-block {
+  @media (max-width: $medium-size) {
     @content;
   }
 }
-@mixin mobile-small-block{
-  @media (max-width: $mobile-size){
+@mixin mobile-small-block {
+  @media (max-width: $mobile-size) {
     @content;
   }
 }
-@mixin mediaMax($size){
-  @media (max-width: $size){
+@mixin mediaMax($size) {
+  @media (max-width: $size) {
     @content;
   }
 }
-@mixin mediaMin($size){
-  @media (min-width: $size){
+@mixin mediaMin($size) {
+  @media (min-width: $size) {
     @content;
   }
 }

@@ -1,13 +1,65 @@
 // base, всегда первым
-@use "base/variables" as *; // as * чтобы не писать variables.$desktop-size
-@use "base/mixins" as *;
-@use "base/reset";
-@use "base/base";
-@use "base/containers";
+@use 'base/variables' as *; // as * чтобы не писать variables.$desktop-size
+@use 'base/mixins' as *;
+@use 'base/reset';
+@use 'base/base';
+@use 'base/containers';
 
-:root{
+// components
+@use 'components/navigation';
+
+:root {
   --container-width: 1180px;
   --container-padding: 15px;
 }
 
-// components
+//layout
+.header {
+  max-width: 100%; //var(--container-width)
+  margin: 0 auto;
+  @include bg(
+    '../assets/images/BG_header.png',
+    no-repeat,
+    center,
+    bottom,
+    cover
+  );
+
+  &__container {
+    @include flex();
+    flex-direction: column;
+    max-width: 700px;
+  }
+  &__title {
+    font-size: 50px;
+    color: $color-white;
+    margin: 60px 0 20px;
+  }
+  &__subtitle {
+    text-align: center;
+    color: $color-primary-dark;
+  }
+  &__btn {
+    margin: 30px 0 50px;
+    font-size: 18px;
+  }
+  &__img {
+    width: 350px;
+  }
+}
+
+.section {
+  &__title {
+    font-family: $font-family-heading;
+
+    line-height: 130%;
+    text-align: center;
+  }
+  &__btn {
+    padding: 10px 50px;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    border-radius: 20px;
+    font-weight: 700;
+  }
+}

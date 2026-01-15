@@ -1,0 +1,48 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.nav {
+  width: 100%;
+  background-color: $color-white;
+
+  &__container {
+    padding: 0 60px;
+    @include flex(space-between);
+  }
+
+  &__logo {
+    width: 120px;
+  }
+
+  &__menu {
+    width: 100%;
+    max-width: 600px;
+    @include flex(space-between);
+    gap: 20px;
+
+    &-item {
+      color: $color-text-title;
+      font-size: $spacing-sm;
+      padding: 40px 0;
+      cursor: pointer;
+      transition: $transition-base;
+
+      &_active {
+        color: $color-primary-dark;
+        font-size: 18px;
+        font-weight: 500;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 5px;
+          border-radius: 5px 5px 0 0;
+          background-color: $color-primary-dark;
+        }
+      }
+    }
+  }
+}
