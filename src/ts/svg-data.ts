@@ -31,4 +31,4 @@ export const SVGICON = {
   },
 } satisfies Record<string, SvgInt>;
 
-type SvgIconName = keyof typeof SVGICON;
+export type SvgIconName = keyof typeof SVGICON;

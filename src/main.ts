@@ -6,6 +6,7 @@ import { getSvgBg, getSvgIcon, createElement } from './ts/utils.ts';
 // логика приложения
 const cardsBox = document.getElementById('cardsBox');
 const practiceList = document.getElementById('practiceList');
+if (!practiceList) throw new Error('practiceList not found');
 const practiceItemAll = practiceList.querySelectorAll('.practice__item');
 
 function getCard(card: ICard) {

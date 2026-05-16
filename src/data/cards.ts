@@ -1,4 +1,4 @@
-import { type SvgName } from '../ts/svg-data.ts';
+import { type SvgBgName } from '../ts/svg-data.ts';
 import meditationIcon from '../assets/icons/meditation.svg';
 import yogaIcon from '../assets/icons/yoga.svg';
 import soundIcon from '../assets/icons/sound.svg';
@@ -7,7 +7,7 @@ export interface ICard {
   icon: string;
   title: string;
   text: string;
-  wave: SvgName;
+  wave: SvgBgName;
 }
 
 // данные карточек
