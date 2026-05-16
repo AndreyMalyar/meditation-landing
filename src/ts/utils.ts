@@ -1,4 +1,9 @@
-import { SVGBG, type SvgName } from './svg-data.ts';
+import {
+  SVGBG,
+  SVGICON,
+  type SvgBgName,
+  type SvgIconName,
+} from './svg-data.ts';
 
 function createSvg(d: string, viewBox: string): SVGSVGElement {
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -17,11 +22,23 @@ export function createElement(tag: string, className?: string): HTMLElement {
   return el;
 }
 
-export function getSvg(name: SvgName, className?: string): SVGSVGElement {
+export function getSvgBg(name: SvgBgName, className?: string): SVGSVGElement {
   const { d, viewBox } = SVGBG[name];
   const svgBg = createSvg(d, viewBox);
   svgBg.classList.add('svgBg', `svgBg__${name}`);
   svgBg.setAttribute('preserveAspectRatio', 'xMinYMin slice');
   if (className) svgBg.classList.add(...className.split(' '));
   return svgBg;
+}
+
+export function getSvgIcon(
+  name: SvgIconName,
+  className?: string
+): SVGSVGElement {
+  const { d, viewBox } = SVGICON[name];
+  const svgIcon = createSvg(d, viewBox);
+  svgIcon.classList.add('svgIcon');
+  svgIcon.setAttribute('preserveAspectRatio', 'xMinYMin slice');
+  if (className) svgIcon.classList.add(...className.split(' '));
+  return svgIcon;
 }
