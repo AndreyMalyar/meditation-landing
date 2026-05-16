@@ -1,0 +1,37 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.header {
+  max-width: 100%; //var(--container-width)
+  margin: 0 auto;
+  @include bg(
+    '../assets/images/BG_header.png',
+    no-repeat,
+    center,
+    bottom,
+    cover
+  );
+
+  &__container {
+    @include flex();
+    flex-direction: column;
+    max-width: 700px;
+  }
+  &__title {
+    font-size: 50px;
+    color: $color-white;
+    margin: 60px 0 20px;
+  }
+  &__subtitle {
+    text-align: center;
+    color: $color-primary-dark;
+  }
+  &__btn {
+    margin: 30px 0 50px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  &__img {
+    width: 350px;
+  }
+}

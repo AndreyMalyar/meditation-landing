@@ -7,6 +7,8 @@
 
 // components
 @use 'components/navigation';
+@use 'components/header';
+@use 'components/cards';
 
 :root {
   --container-width: 1180px;
@@ -14,52 +16,26 @@
 }
 
 //layout
-.header {
-  max-width: 100%; //var(--container-width)
-  margin: 0 auto;
-  @include bg(
-    '../assets/images/BG_header.png',
-    no-repeat,
-    center,
-    bottom,
-    cover
-  );
-
-  &__container {
-    @include flex();
-    flex-direction: column;
-    max-width: 700px;
-  }
-  &__title {
-    font-size: 50px;
-    color: $color-white;
-    margin: 60px 0 20px;
-  }
-  &__subtitle {
-    text-align: center;
-    color: $color-primary-dark;
-  }
-  &__btn {
-    margin: 30px 0 50px;
-    font-size: 18px;
-  }
-  &__img {
-    width: 350px;
-  }
+.btn {
+  padding: 10px 50px;
+  background-color: $color-primary-dark;
+  color: $color-white;
+  border-radius: 20px;
 }
 
 .section {
+  padding: 120px 0 0;
   &__title {
     font-family: $font-family-heading;
 
     line-height: 130%;
     text-align: center;
   }
-  &__btn {
-    padding: 10px 50px;
-    background-color: $color-primary-dark;
-    color: $color-white;
-    border-radius: 20px;
-    font-weight: 700;
-  }
+}
+
+.svgBg {
+  fill: #fff;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(4px 4px 8px rgba(34, 60, 80, 0.5));
 }
