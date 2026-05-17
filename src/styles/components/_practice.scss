@@ -1,0 +1,71 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.practice {
+  &__title {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__wrap {
+    @include flex();
+    position: relative;
+
+    &-bg {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: auto;
+    }
+  }
+  &__img-box {
+    margin-right: 100px;
+    width: 500px;
+    flex-shrink: 0;
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  &__item {
+    padding: 35px 80px 35px 40px;
+    cursor: pointer;
+    position: relative;
+
+    &-active {
+      background: url();
+    }
+
+    &-title {
+      font-weight: 500;
+      font-size: 24px;
+      color: $color-text-subtitle;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    &-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    &-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+    }
+    &-arrow {
+      fill: #000;
+      width: 60px;
+      height: auto;
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      z-index: 1;
+    }
+  }
+}

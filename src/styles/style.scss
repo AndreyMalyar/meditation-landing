@@ -9,6 +9,7 @@
 @use 'components/navigation';
 @use 'components/header';
 @use 'components/cards';
+@use 'components/practice';
 
 :root {
   --container-width: 1180px;
@@ -27,8 +28,16 @@
   padding: 120px 0 0;
   &__title {
     font-family: $font-family-heading;
+    font-size: 45px;
     line-height: 130%;
     text-align: center;
+    color: $color-text-title;
+  }
+  &__desc {
+    max-width: 800px;
+    text-align: center;
+    color: $color-text-body;
+    margin: 20px auto 50px;
   }
 }
 
@@ -39,65 +48,8 @@
   filter: drop-shadow(4px 4px 8px rgba(34, 60, 80, 0.5));
 }
 
-.practice {
-  &__title {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 130%;
-    color: $color-text-title;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  &__desc {
-    max-width: 800px;
-    text-align: center;
-    color: $color-text-body;
-    margin: 20px auto 50px;
-  }
+.breath {
   &__wrap {
     @include flex();
-  }
-  &__img-box {
-    margin-right: 100px;
-    width: 500px;
-    flex-shrink: 0;
-  }
-  &__img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  &__item {
-    padding: 35px 80px 35px 40px;
-    cursor: pointer;
-    position: relative;
-
-    &-active {
-      background: url();
-    }
-
-    &-title {
-      font-weight: 500;
-      font-size: 24px;
-      color: $color-text-subtitle;
-      margin-bottom: 10px;
-    }
-
-    &-bg {
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: -1;
-    }
-    &-arrow {
-      fill: #000;
-      width: 60px;
-      height: auto;
-      position: absolute;
-      bottom: 20px;
-      right: 40px;
-    }
   }
 }
