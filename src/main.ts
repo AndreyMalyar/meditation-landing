@@ -8,6 +8,8 @@ const cardsBox = document.getElementById('cardsBox');
 const practiceList = document.getElementById('practiceList');
 if (!practiceList) throw new Error('practiceList not found');
 const practiceItemAll = practiceList.querySelectorAll('.practice__item');
+const playStopList = document.querySelectorAll('.playStop');
+if (!playStopList) throw new Error('playStop button not found');
 
 function getCard(card: ICard) {
   const currentCard = createElement('div', 'card');
@@ -60,4 +62,10 @@ practiceList.addEventListener('click', (evt) => {
   const currentItem = target.closest('.practice__item');
   if (!currentItem) return;
   if (firstItem) activateItem(currentItem);
+});
+
+playStopList.forEach((item) => {
+  const play = getSvgIcon('play');
+  play.classList.add('breath__item-icon');
+  item.append(play);
 });

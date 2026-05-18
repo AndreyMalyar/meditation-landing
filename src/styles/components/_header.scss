@@ -17,7 +17,7 @@
     flex-direction: column;
     max-width: 700px;
   }
-  &__title {
+  &__title.section__title {
     font-size: 50px;
     color: $color-white;
     margin: 60px 0 20px;
