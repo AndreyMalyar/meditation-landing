@@ -10,6 +10,8 @@ if (!practiceList) throw new Error('practiceList not found');
 const practiceItemAll = practiceList.querySelectorAll('.practice__item');
 const playStopList = document.querySelectorAll('.playStop');
 if (!playStopList) throw new Error('playStop button not found');
+const footerIconBox = document.getElementById('footerIconBox');
+if (!footerIconBox) throw new Error('footerIconBox element not found');
 
 function getCard(card: ICard) {
   const currentCard = createElement('div', 'card');
@@ -69,3 +71,12 @@ playStopList.forEach((item) => {
   play.classList.add('breath__item-icon');
   item.append(play);
 });
+
+function createFooterIcon() {
+  const facebook = getSvgIcon('facebook', 'footer__icon');
+  const instagram = getSvgIcon('instagram', 'footer__icon');
+  const twitter = getSvgIcon('twitter', 'footer__icon');
+
+  footerIconBox.append(facebook, instagram, twitter);
+}
+createFooterIcon();
