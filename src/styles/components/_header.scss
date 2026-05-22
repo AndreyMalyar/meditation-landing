@@ -34,4 +34,11 @@
   &__img {
     width: 350px;
   }
+  &__canvas {
+    pointer-events: none;
+
+    &-assets {
+      display: none;
+    }
+  }
 }

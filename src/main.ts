@@ -2,6 +2,7 @@
 import './styles/style.scss';
 import { cards, type ICard } from './data/cards.ts';
 import { getSvgBg, getSvgIcon, createElement } from './ts/utils.ts';
+import { MeditationScene } from './ts/MeditationScene.ts';
 
 // логика приложения
 const cardsBox = document.getElementById('cardsBox');
@@ -77,6 +78,28 @@ function createFooterIcon() {
   const instagram = getSvgIcon('instagram', 'footer__icon');
   const twitter = getSvgIcon('twitter', 'footer__icon');
 
-  footerIconBox.append(facebook, instagram, twitter);
+  footerIconBox?.append(facebook, instagram, twitter);
 }
 createFooterIcon();
+
+window.addEventListener('load', () => {
+  const canvas = document.getElementById('headerCanvas') as HTMLCanvasElement;
+  const context = canvas.getContext('2d')!;
+
+  canvas.width = 350;
+  canvas.height = 330;
+
+  const meditationScene = new MeditationScene(canvas);
+  meditationScene.init();
+
+  let lastTime = 0;
+  function animate(timeStamp) {
+    const deltaTime = timeStamp - lastTime;
+    lastTime = timeStamp;
+
+    meditationScene.render(context, deltaTime);
+
+    requestAnimationFrame(animate);
+  }
+  animate(0);
+});
