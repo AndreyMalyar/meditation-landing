@@ -1,4 +1,4 @@
-import { MeditationScene } from './meditationScene.ts';
+import { MeditationScene } from './MeditationScene.ts';
 
 export class Character {
   meditationScene: MeditationScene;

@@ -93,7 +93,7 @@ window.addEventListener('load', () => {
   meditationScene.init();
 
   let lastTime = 0;
-  function animate(timeStamp) {
+  function animate(timeStamp: number) {
     const deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
 
