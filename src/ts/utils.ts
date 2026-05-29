@@ -16,8 +16,11 @@ function createSvg(d: string, viewBox: string): SVGSVGElement {
   return svg;
 }
 
-export function createElement(tag: string, className?: string): HTMLElement {
-  const el: HTMLElement = document.createElement(tag);
+export function createElement<T extends HTMLElement>(
+  tag: string,
+  className?: string
+): T {
+  const el = document.createElement(tag) as T;
   if (className) el.classList.add(...className.split(' '));
   return el;
 }

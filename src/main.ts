@@ -3,6 +3,8 @@ import './styles/style.scss';
 import { cards, type ICard } from './data/cards.ts';
 import { getSvgBg, getSvgIcon, createElement } from './ts/utils.ts';
 import { MeditationScene } from './ts/MeditationScene.ts';
+import { AudioVisualizer } from './ts/AudioVisualizer.ts';
+import { tracks } from './data/tracks.ts';
 
 // логика приложения
 const cardsBox = document.getElementById('cardsBox');
@@ -67,12 +69,6 @@ practiceList.addEventListener('click', (evt) => {
   if (firstItem) activateItem(currentItem);
 });
 
-playStopList.forEach((item) => {
-  const play = getSvgIcon('play');
-  play.classList.add('breath__item-icon');
-  item.append(play);
-});
-
 function createFooterIcon() {
   const facebook = getSvgIcon('facebook', 'footer__icon');
   const instagram = getSvgIcon('instagram', 'footer__icon');
@@ -81,6 +77,18 @@ function createFooterIcon() {
   footerIconBox?.append(facebook, instagram, twitter);
 }
 createFooterIcon();
+
+//Web Audio Api
+playStopList.forEach((item, index) => {
+  const play = getSvgIcon('play');
+  play.classList.add('breath__item-icon');
+  item.append(play);
+
+  if (tracks[index]) {
+    (item as HTMLElement).dataset.title = tracks[index].title;
+  }
+});
+// END Web Audio Api
 
 window.addEventListener('load', () => {
   const canvas = document.getElementById('headerCanvas') as HTMLCanvasElement;
@@ -92,12 +100,15 @@ window.addEventListener('load', () => {
   const meditationScene = new MeditationScene(canvas);
   meditationScene.init();
 
+  const audioVisualizer = new AudioVisualizer();
+
   let lastTime = 0;
   function animate(timeStamp: number) {
     const deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
 
     meditationScene.render(context, deltaTime);
+    audioVisualizer.render();
 
     requestAnimationFrame(animate);
   }

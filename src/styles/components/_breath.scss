@@ -19,14 +19,15 @@
   }
 
   &__item {
+    overflow: hidden;
     width: 400px;
     position: relative;
     padding: 20px 60px 20px 30px;
     border: 2px solid transparent;
     border-radius: 8px;
     background:
-      url('../../assets/images/breath-dots.svg') center center / auto 85%
-        no-repeat,
+    //  url('../../assets/images/breath-dots.svg') center center / auto 85%
+    //    no-repeat,
       linear-gradient(90deg, #c3e2de, #cff1ed 80%, transparent) padding-box,
       linear-gradient(90deg, $color-primary-dark, #c3e2de 80%, transparent)
         border-box;
@@ -40,6 +41,14 @@
       font-size: 24px;
       color: $color-text-subtitle;
       margin-bottom: 10px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    &-desc {
+      position: relative;
+      z-index: 2;
     }
 
     &-box-icon {
@@ -52,6 +61,7 @@
       position: absolute;
       top: 50%;
       right: 10px;
+      z-index: 2;
       cursor: pointer;
       transform: translateY(-50%);
       box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -61,6 +71,14 @@
       fill: $color-white;
       width: 20px;
       height: auto;
+    }
+
+    &-canvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      //background-color: #f00;
+      z-index: 1;
     }
   }
 
